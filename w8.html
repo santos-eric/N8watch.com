@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N8watch — Never Miss Another Customer</title>
+<meta name="description" content="N8watch answers your customers in seconds — nights, weekends, holidays — so you never lose another job to voicemail.">
+<style>
+  :root {
+    --bg: #0b0f1a;
+    --bg2: #111728;
+    --card: #151d33;
+    --text: #e8ecf4;
+    --muted: #9aa5bd;
+    --accent: #f5a623;
+    --accent-dark: #d98a0b;
+    --green: #34d399;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
+  .logo .eight { color: var(--accent); }
+  .btn {
+    display: inline-block; background: var(--accent); color: #14100a;
+    font-weight: 700; padding: 12px 28px; border-radius: 8px;
+    text-decoration: none; border: none; cursor: pointer; font-size: 1rem;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    border: 2px solid var(--accent);
+  }
+  .btn-ghost:hover { background: rgba(245,166,35,.12); }
+
+  /* Hero */
+  .hero { text-align: center; padding: 72px 0 56px; }
+  .hero .kicker {
+    color: var(--accent); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; font-size: .85rem; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 2.6rem; line-height: 1.2; margin-bottom: 20px; }
+  .hero h1 .hl { color: var(--accent); }
+  .hero p.sub { color: var(--muted); font-size: 1.15rem; max-width: 640px; margin: 0 auto 32px; }
+  .hero .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* Trust strip */
+  .strip {
+    background: var(--bg2); border-top: 1px solid #1e2a45; border-bottom: 1px solid #1e2a45;
+    padding: 28px 0; text-align: center; color: var(--muted);
+  }
+  .strip strong { color: var(--text); }
+
+  /* Sections */
+  section.block { padding: 64px 0; }
+  section.block h2 { font-size: 1.9rem; margin-bottom: 12px; text-align: center; }
+  section.block p.lead { color: var(--muted); text-align: center; max-width: 640px; margin: 0 auto 40px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .step {
+    background: var(--card); border: 1px solid #1e2a45; border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .step .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent); color: #14100a; font-weight: 800; margin-bottom: 16px;
+  }
+  .step h3 { margin-bottom: 8px; font-size: 1.1rem; }
+  .step p { color: var(--muted); font-size: .95rem; }
+
+  /* Trades */
+  .trades { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .trade {
+    background: var(--card); border: 1px solid #1e2a45; border-radius: 999px;
+    padding: 10px 22px; font-weight: 600; font-size: .95rem;
+  }
+  .trade::before { content: "✓ "; color: var(--green); font-weight: 800; }
+
+  /* Pricing */
+  .price-card {
+    background: var(--card); border: 2px solid var(--accent); border-radius: 16px;
+    padding: 40px 32px; max-width: 520px; margin: 0 auto; text-align: center;
+  }
+  .price-card .from { color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
+  .price-card .amount { font-size: 3rem; font-weight: 800; color: var(--accent); margin: 8px 0; }
+  .price-card .per { color: var(--muted); margin-bottom: 24px; }
+  .price-card ul { list-style: none; text-align: left; margin: 0 auto 28px; max-width: 380px; }
+  .price-card li { padding: 8px 0; color: var(--muted); }
+  .price-card li::before { content: "✓ "; color: var(--green); font-weight: 800; }
+  .price-card .fine { margin-top: 20px; font-size: .85rem; color: var(--muted); }
+
+  /* Audit CTA */
+  .audit {
+    background: linear-gradient(135deg, #141b31, #1a1430);
+    border: 1px solid #2a3560; border-radius: 16px;
+    padding: 48px 32px; text-align: center;
+  }
+  .audit h2 { margin-bottom: 12px; }
+  .audit p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+
+  /* Footer */
+  footer { border-top: 1px solid #1e2a45; padding: 32px 0; text-align: center; color: var(--muted); font-size: .9rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    section.block { padding: 44px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="wrap">
+  <div class="logo">N<span class="eight">8</span>WATCH</div>
+  <a class="btn" href="#audit">Free Audit</a>
+</nav>
+
+<header class="hero wrap">
+  <div class="kicker">After-hours customer capture</div>
+  <h1>Every missed call is <span class="hl">money walking away.</span></h1>
+  <p class="sub">Your customers call at 9 PM. You're on a roof, under a sink, or finally home. N8watch answers them in seconds — nights, weekends, holidays — so you never lose another job to voicemail.</p>
+  <div class="cta-row">
+    <a class="btn" href="#audit">Get My Free Missed-Call Audit</a>
+    <a class="btn btn-ghost" href="#how">How It Works</a>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">You do the work. <strong>We make sure the phone never costs you a job.</strong></div>
+</div>
+
+<section class="block wrap" id="how">
+  <h2>How it works</h2>
+  <p class="lead">No new equipment. No apps to learn. No behavior change. Three steps and you're covered.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>We set up your line</h3>
+      <p>You get a dedicated business number. Missed and after-hours calls route to it automatically. Your current phone stays exactly the same.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>Customers get an instant answer</h3>
+      <p>The moment a call goes unanswered, the customer gets a text back in seconds. We find out what they need, how urgent it is, and when they want service.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>You wake up to booked jobs</h3>
+      <p>Every morning you get a clean list: who called, what they need, sorted by urgency. You just call back and close. Nothing falls through.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap">
+  <h2>Built for the trades</h2>
+  <p class="lead">If a missed call costs you a job, this is for you.</p>
+  <div class="trades">
+    <span class="trade">HVAC</span>
+    <span class="trade">Plumbing</span>
+    <span class="trade">Electrical</span>
+    <span class="trade">Auto Repair</span>
+    <span class="trade">Pest Control</span>
+    <span class="trade">Dental</span>
+    <span class="trade">Legal</span>
+    <span class="trade">Real Estate</span>
+  </div>
+</section>
+
+<section class="block wrap" id="pricing">
+  <h2>Simple pricing</h2>
+  <p class="lead">One captured job pays for months of service. That's the whole math.</p>
+  <div class="price-card">
+    <div class="from">Plans from</div>
+    <div class="amount">$99<span style="font-size:1.4rem">/mo</span></div>
+    <div class="per">flat rate — no per-call fees, no surprises</div>
+    <ul>
+      <li>Instant text-back on every missed call</li>
+      <li>After-hours &amp; weekend coverage</li>
+      <li>Lead qualification &amp; urgency sorting</li>
+      <li>Morning summary of every opportunity</li>
+      <li>We monitor it, you never touch it</li>
+      <li>Text us anytime something looks off</li>
+    </ul>
+    <a class="btn" href="#audit">Start With a Free Audit</a>
+    <div class="fine">One-time setup fee quoted per business.<br>High-volume plans available.</div>
+  </div>
+</section>
+
+<section class="block wrap" id="audit">
+  <div class="audit">
+    <h2>Free missed-call audit</h2>
+    <p>Tell us about your business and we'll show you — with real numbers — how many customers you're losing to voicemail every month, and exactly what it would take to capture them. No pressure, no pitch. Just the math.</p>
+    <!-- TODO(Eric): replace with your real contact info -->
+    <p style="margin-bottom:24px;">
+      <a class="btn" href="mailto:hello@n8watch.com">hello@n8watch.com</a>
+    </p>
+    <p style="font-size:.9rem;">Prefer to talk? Call or text <strong style="color:var(--text);">[YOUR PHONE NUMBER]</strong></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="margin-bottom:12px;">N<span class="eight">8</span>WATCH</div>
+    <p>Your business, answered. Nights, weekends, holidays.</p>
+    <p style="margin-top:8px;"><a href="mailto:hello@n8watch.com">hello@n8watch.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
